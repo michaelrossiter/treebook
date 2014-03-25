@@ -7,10 +7,10 @@ class User < ActiveRecord::Base
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :profile_name, presence: true,
-                           uniqueness: true,
-                           format: {
-                            with: /a-zA-Z0-9_-/,
-                            message: 'Must be formatted correctly.'
+                            uniqueness: true,
+                            format: {
+                            with: /\A[a-zA-Z0-9_-]+\z/, 
+                            message: 'Username must be at least 8 characters, with no spaces and no special characters.'
                            }
 
   has_many :statuses
@@ -18,16 +18,4 @@ class User < ActiveRecord::Base
   def full_name
   	first_name + " " + last_name
   end
-
- # Never trust parameters from the scary internet, only allow the white list through.
-    def user_params
-      params.permit(:user_id, :profile_name, :email, :first_name, :last_name)
-    end
-
-	def status_params
-      params.permit(:user_id, :content)
-    end
-
-
-
 end
