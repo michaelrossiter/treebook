@@ -25,12 +25,12 @@
     	 <% if user_signed_in? %>
         <li><a href="#"><%= link_to current_user.full_name, edit_user_registration_path %></a></li>
         <% else %>
-        <li><a href="#"><%= link_to "Register", new_user_registration_path %></a></li>
+        <li><a href="#"><%= link_to "Register", register_path %></a></li>
      <% end %>
      <% if user_signed_in? %>
         <li><a href="#"><%= link_to "Log Out", destroy_session_path(:user), :method => :delete %></a></li>
         <% else %>
-        <li><a href="#"><%= link_to "Log In", new_user_session_path %></a></li>
+        <li><a href="#"><%= link_to "Log In", login_path %></a></li>
       <% end %>
     </ul>
 
