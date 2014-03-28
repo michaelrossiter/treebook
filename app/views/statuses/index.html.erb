@@ -2,24 +2,24 @@
   <h1>Status Wall</h1>
 </div>
 
-<div class="row">
 	<div class="col-md-12 page-header">
 			<%= link_to 'New Status', new_status_path, class: "btn btn-success btn-1g col-md-12" %>
 	</div>
-</div>
 
-<div class="row">
 	<div class="status">
 		<% @statuses.each do |status| %>
 		  <strong><%= status.user.full_name %></strong>
 		  <p><%= status.content %></p>
-	<div class="meta">
-	  <%= link_to time_ago_in_words(status.created_at) + " ago", status %>
-	  <span class="admin hover">
-	   | <%= link_to "Edit", edit_status_path(status) %> |
-		 <%= link_to "Delete", status, method: :delete, data: {confirm: "Are your sure you want to delete this status?"} %>
-			</span>
+		<div class="meta">
+		  <%= link_to time_ago_in_words(status.created_at) + " ago", status %>
+		  <span class="admin hover">
+		   | <%= link_to "Edit", edit_status_path(status) %> |
+			 <%= link_to "Delete", status, method: :delete, data: {confirm: "Are your sure you want to delete this status?"} %>
+		  </span>
+		</div>
+			<%end%>
 	</div>
+	
 </div>
-<%end%>
+
 	

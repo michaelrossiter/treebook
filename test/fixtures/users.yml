@@ -2,5 +2,4 @@ michael:
  first_name: "Michael"
  last_name: "Rossiter"
  email: "michael.b.s.rossiter@gmail.com"
- password: "password"
- password_confirmation: "password"
+ profile_name: "Rennsu"
