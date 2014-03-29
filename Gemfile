@@ -3,8 +3,13 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use sqlite3 as the database for development and test Active Record
+group :development, :test do
+	gem 'sqlite3'
+end
+
+# Use postgres as the database for production Active Record
+
 
 # Use devise for authentication
 gem 'devise'
