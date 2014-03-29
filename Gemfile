@@ -10,7 +10,7 @@ end
 
 # Use postgres as the database for production Active Record
 group :production do
-	gem pg
+	gem 'pg'
 end
 
 # Use devise for authentication
