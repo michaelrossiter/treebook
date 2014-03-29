@@ -9,7 +9,9 @@ group :development, :test do
 end
 
 # Use postgres as the database for production Active Record
-
+group :production do
+	gem pg
+end
 
 # Use devise for authentication
 gem 'devise'
